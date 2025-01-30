@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capstone-service
+  labels:
+    app: capstone-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: capstone-service
+  template:
+    metadata:
+      labels:
+        app: capstone-service
+    spec:
+      serviceAccountName: configmap-reader
+      containers:
+      - name: myapp-service
+        image: patilritesh/devops-capstone
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8080
+        resources:
+           limits:
+             cpu: "500m"
+             memory: "512Mi"
+           requests:
+             cpu: "250m"
+             memory: "256Mi"
+
