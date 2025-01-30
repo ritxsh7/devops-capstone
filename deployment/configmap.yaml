@@ -6,7 +6,7 @@ data:
   application.yml: |-
     spring:
       application:
-        name: capstone
+        name: myapp
       jpa:
         database-platform: org.hibernate.dialect.H2Dialect
         show-sql: true
@@ -17,7 +17,7 @@ data:
           enabled: true
           path: /h2-console
           settings.trace: true
-          settings.web-allow-others: true
+          settings.web-allow-others: false
 
     server:
       servlet:
@@ -25,7 +25,7 @@ data:
       port: 8888
 
     h2.database:
-      jdbcUrl: jdbc:h2:mem:FICDB
+      jdbcUrl: jdbc:h2:mem:FIC
       driverClassName: org.h2.Driver
       username: sa
       password: password
