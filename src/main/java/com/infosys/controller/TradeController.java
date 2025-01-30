@@ -20,4 +20,14 @@ public class TradeController {
     public List<Trade> getAll(){
     	return tradeService.getAll();
     }
+
+    @GetMapping("/active")
+    public List<Trade> getActiveTrades() {
+        return tradeService.getActiveTrades();
+    }
+
+    @GetMapping("/5daywindow")
+    public List<Trade> getMaturingTrades() {
+        return tradeService.getMaturingTrades();
+    }
 }
