@@ -14,6 +14,16 @@ public class TradeService {
     @Autowired
     private TradeRepository tradeRepository;
     
+     public List<Trade> getActiveTrades() {
+        return tradeRepository.findActiveTrades();
+    }
+
+    public List<Trade> getMaturingTrades() {
+        LocalDate today = LocalDate.now();
+        LocalDate fiveDaysLater = today.plusDays(5);
+        return tradeRepository.findTradesMaturingWithinPeriod(today, fiveDaysLater);
+    }
+
     public List<Trade> getAll(){
     	return tradeRepository.findAll();
     }
