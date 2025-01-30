@@ -19,7 +19,7 @@ server:
   port: 8888
 
 h2.database:
-  jdbcUrl: jdbc:h2:tcp://0.0.0.0:9092/~/FIC;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE;webAllowOthers=true
+  jdbcUrl: jdbc:h2:mem:FIC
   driverClassName: org.h2.Driver
   username: sa
   password: password
