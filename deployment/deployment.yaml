@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: capstone-service
+  name: myapp-service
   labels:
-    app: capstone-service
+    app: myapp-service
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: capstone-service
+      app: myapp-service
   template:
     metadata:
       labels:
-        app: capstone-service
+        app: myapp-service
     spec:
       serviceAccountName: configmap-reader
       containers:
@@ -28,4 +28,4 @@ spec:
            requests:
              cpu: "250m"
              memory: "256Mi"
-
+        
