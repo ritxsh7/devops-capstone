@@ -26,7 +26,7 @@ public class TradeController {
         return tradeService.getActiveTrades();
     }
 
-    @GetMapping("/maturing")
+    @GetMapping("/5daywindow")
     public List<Trade> getMaturingTrades() {
         return tradeService.getMaturingTrades();
     }
