@@ -1,0 +1,25 @@
+spring:
+      application:
+        name: capstone
+      jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        show-sql: true
+        hibernate:
+          ddl-auto: update
+      h2:
+        console:
+          enabled: true
+          path: /h2-console
+          settings.trace: true
+          settings.web-allow-others: false
+
+server:
+  servlet:
+    context-path: /fic
+  port: 8888
+
+h2.database:
+  jdbcUrl: jdbc:h2:mem:FIC
+  driverClassName: org.h2.Driver
+  username: sa
+  password: password
